@@ -1,9 +1,6 @@
 esphome:
   name: plant-monitor
   friendly_name: Plant Monitor
-  includes:
-    # Custom component for reading the battery percentage through the Battery monitor IC onboard the NanoCell
-    - /config/esphome/custom_components/MAX17048_component.h
   libraries:
     # Wire library is needed for the i2c protocol
     - "Wire"
@@ -13,8 +10,10 @@ esphome:
       - output.turn_on: soil_en
       - output.turn_on: temp_en
       - output.turn_on: light_en
-      # If you want to implement deep_sleep, uncomment the following line
+      
+      # Start the script that will check the status of the binary sensor and decide whether to enter deep sleep or not
       # - script.execute: deep_sleep_evaluation
+
 
 # ------ This is generated automatically ------
 esp32:
@@ -48,6 +47,7 @@ captive_portal:
 
 # Initiallize the I2C Protocol (NanoCell uses pins 2 and 3)
 i2c:
+- id: bus_a
   sda: 2
   scl: 3
   scan: True
@@ -108,23 +108,17 @@ sensor:
     address: 0x40
     update_interval: 1s
 
-  # The implementation of the Battery monitor IC
-  - platform: custom
-    lambda: |-
-      auto my_sensor = new  MAX17048Sensor();
-      App.register_component(my_sensor);
-      return {my_sensor->voltage_sensor, my_sensor->percentage_sensor, my_sensor->rate_sensor};
-  
-    sensors:
-    - name: "Battery Voltage"
-      unit_of_measurement: V
-      accuracy_decimals: 2
-    - name: "Battery Percentage"
-      unit_of_measurement: '%'
-      accuracy_decimals: 2
-    - name: "Discharge Rate"
-      unit_of_measurement: '%/h'
-      accuracy_decimals: 2
+  # The implementation of the integrated Battery sensor
+  - platform: max17043
+    id: max17043_id
+    i2c_id: bus_a
+    battery_voltage:
+      name: "Battery Voltage"
+      accuracy_decimals: 1
+    battery_level:
+      name: "Battery Level"
+      accuracy_decimals: 0
+    update_interval: 1s
 
 # This script sets the waiting time before going into sleep mode
 # Once the delay time has passed, checks the status of the binary sensor mentioned above
