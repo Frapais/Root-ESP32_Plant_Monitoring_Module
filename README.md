@@ -1,7 +1,7 @@
 # Root - Complete Plant Monitoring Module
 
 This is the repository of my **Root** project, a complete plant monitoring system, consisting of a Capacitive Soil Moisture Sensor, an Ambient Light sensor, and an Air Temperature & Humidity sensor.
-By directly soldering a NanoCell board, you can make a battery powered plant monitoring sensor for Home Assistant.
+By directly soldering a [Sprig ESP32](https://www.tindie.com/products/spriglabs/sprig-esp32-c3-development-board/) board, you can make a battery powered plant monitoring sensor for Home Assistant.
 
 |<img src="https://github.com/Frapais/PlantCell-Plus/blob/main/Photos/2024-05-15T21_10_45.301Z-2024-05-15%20033.jpg" alt="Photo1" width="600"/>|<img src="https://github.com/Frapais/PlantCell-Plus/blob/main/Drawings/Plant%20monitor%20pinout.png" alt="Pinout" width="200"/>|
 |-|-|
@@ -22,7 +22,7 @@ The sensor outputs an varying voltage corresponding to the change in capacitance
 * LiPo battery connector
 
 ### Tests
-To test this sensor, a [NanoCell-C3](https://www.tindie.com/products/spriglabs/esp32-devkit-nanocell-c3/) board was soldered to the corresponding pins, and the raw values of the sensor were continously uploaded to the local Home Assistant server.
+To test this sensor, a [Sprig ESP32 development board](https://www.tindie.com/products/spriglabs/sprig-esp32-c3-development-board/) board was soldered to the corresponding pins, and the raw values of the sensor were continously uploaded to the local Home Assistant server.
 The analog input was read with 11dB attennuation, and the maximum values were **1.8V** with a completely dry sensor, and **0.89V** when the sensor was submerged in a glass of water.
 These valuse can be mapped into a percentage of **0%** and **100%** soil moisture accordingly. However, it is recommended to repeat this calibration process when the sensor is placed inside the soil in its final position.
 
