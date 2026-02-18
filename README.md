@@ -3,7 +3,7 @@
 This is the repository of my **Root** project, a complete plant monitoring system, consisting of a Capacitive Soil Moisture Sensor, an Ambient Light sensor, and an Air Temperature & Humidity sensor.
 By directly soldering a [Sprig ESP32](https://www.tindie.com/products/spriglabs/sprig-esp32-c3-development-board/) board, you can make a battery powered plant monitoring sensor for Home Assistant.
 
-|<img src="https://github.com/Frapais/PlantCell-Plus/blob/main/Photos/2024-05-15T21_10_45.301Z-2024-05-15%20033.jpg" alt="Photo1" width="600"/>|<img src="https://github.com/Frapais/PlantCell-Plus/blob/main/Drawings/Plant%20monitor%20pinout.png" alt="Pinout" width="200"/>|
+|<img src="Photos/image6.jpg" alt="Photo1" width="600"/>|<img src="https://github.com/Frapais/PlantCell-Plus/blob/main/Drawings/Plant%20monitor%20pinout.png" alt="Pinout" width="200"/>|
 |-|-|
 
 
