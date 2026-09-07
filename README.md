@@ -6,7 +6,10 @@ By directly soldering a [Sprig ESP32](https://www.tindie.com/products/spriglabs/
 |<img src="Photos/image6.jpg" alt="Photo1" width="600"/>|<img src="https://github.com/Frapais/PlantCell-Plus/blob/main/Drawings/Plant%20monitor%20pinout.png" alt="Pinout" width="200"/>|
 |-|-|
 
-
+## 🔋 Free ESPHome battery pack
+Building battery-powered ESP32 sensors? Check out this battery-life
+calculator (works with any ESP32 board):
+**→ [Get the free pack](https://sprig-labs.com/esp32-battery-life-calculator/?utm_source=github&utm_medium=readme)**
 
 
 ## Description
